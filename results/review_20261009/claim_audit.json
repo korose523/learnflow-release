@@ -1,0 +1,157 @@
+{
+  "synthetic_stratification": {
+    "4源(0.40/0.30/0.20/0.10)": {
+      "full_nonlinear": {
+        "source_transform_cells": 28,
+        "repeats_per_cell": 200,
+        "mean_cell_L1": 0.12761978571428573,
+        "mean_cell_reversal_fraction": 0.3644642857142858
+      },
+      "strict_domain_nonlinear": {
+        "source_transform_cells": 20,
+        "repeats_per_cell": 200,
+        "mean_cell_L1": 0.0733018,
+        "mean_cell_reversal_fraction": 0.28675
+      }
+    },
+    "3源(0.45/0.35/0.20)": {
+      "full_nonlinear": {
+        "source_transform_cells": 21,
+        "repeats_per_cell": 200,
+        "mean_cell_L1": 0.16419595238095236,
+        "mean_cell_reversal_fraction": 0.3102380952380952
+      },
+      "strict_domain_nonlinear": {
+        "source_transform_cells": 15,
+        "repeats_per_cell": 200,
+        "mean_cell_L1": 0.09811293333333333,
+        "mean_cell_reversal_fraction": 0.23333333333333336
+      }
+    }
+  },
+  "strict_subset_domain_check": {
+    "seed_base": 902000,
+    "repeats": 200,
+    "evaluation_n": 500,
+    "calibration_n": 500,
+    "minimum_generated_value": 0.007658814827977601,
+    "non_strict_numeric_cases": [],
+    "excluded_probit_saturation_cases": [
+      {
+        "repetition": 5,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 8,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 10,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 17,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 44,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 47,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 54,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 60,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 61,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 64,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 70,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 75,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 98,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 105,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 115,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 142,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 149,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 158,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 164,
+        "source": 1,
+        "transform": "probit_std"
+      },
+      {
+        "repetition": 183,
+        "source": 1,
+        "transform": "probit_std"
+      }
+    ]
+  },
+  "adjustment_counterexample": {
+    "pearson": 0.8853471681622742,
+    "spearman": 0.8999999999999998,
+    "adjusted_covariance_ddof0": -0.03361590169333764,
+    "expected_covariance": -0.03361590169333745
+  },
+  "_public_release": {
+    "removed_fields": [
+      "protocol_graph"
+    ],
+    "reason": "Item-level fields are not distributed: DBE-KT22 question identifiers, teacher labels and per-item scores fall under the ADA conditions of use, and Junyi per-item vectors are omitted for the same uniform rule. Running the listed script on the raw datasets regenerates the full file.",
+    "regenerate_with": "scripts/research/audit_review_claims.py",
+    "full_file_sha256_at_commit": "907292dac8fb61996b286c87398ce43c9d2ca0d3e5350ebe644fca67c348c92a",
+    "commit": "f08f67398eaa5767aa0231bf03d9bcca23c32beb"
+  }
+}

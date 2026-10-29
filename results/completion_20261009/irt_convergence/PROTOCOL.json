@@ -1,0 +1,23 @@
+{
+  "scope": "Exploratory numerical sensitivity on the existing full-item B-half captured responses; no new data and no learner bootstrap. Not preregistered or recovery of historical convergence.",
+  "input_sha256": "7c8b8e07c820a7674c28d9b978f3286fb14f1eff567bd454503b2e30b49bb305",
+  "script_sha256": "f03378c714a26b8cdda1e6973e0242e14ad34afdd40a2f870e076b23408d19da",
+  "nodes": 25,
+  "grid": [
+    -5,
+    5
+  ],
+  "max_em": 200,
+  "initial_b": 0,
+  "settings": [
+    {
+      "penalty": 0,
+      "interpretation": "unpenalized marginal likelihood"
+    },
+    {
+      "penalty": 0.16,
+      "interpretation": "Gaussian item prior SD=2.5, posterior-mode criterion; different estimator"
+    }
+  ],
+  "stopping": "max item-parameter change <1e-4 AND relative objective change <1e-7 for 3 consecutive EM iterations; this is numerical stopping, not proof of global optimality or criterion validity"
+}

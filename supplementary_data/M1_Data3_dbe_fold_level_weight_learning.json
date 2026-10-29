@@ -1,0 +1,87 @@
+{
+  "design": "Historical transductive ECDF-before-split CV, not inductive new-item validation",
+  "seed": 42,
+  "folds": [
+    {
+      "fold": 1,
+      "train_rho": 0.5781338273905986,
+      "test_rho": 0.4070725317516735,
+      "weights": [
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "fold": 2,
+      "train_rho": 0.5541536656508539,
+      "test_rho": 0.35395196182167965,
+      "weights": [
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "fold": 3,
+      "train_rho": 0.5193410573095051,
+      "test_rho": 0.5882427985370285,
+      "weights": [
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "fold": 4,
+      "train_rho": 0.5236562277683934,
+      "test_rho": 0.5824299544643455,
+      "weights": [
+        0.0,
+        0.0,
+        0.5,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "fold": 5,
+      "train_rho": 0.5235829587717336,
+      "test_rho": 0.49928054732404537,
+      "weights": [
+        0.0,
+        0.0,
+        0.42857142857142855,
+        0.5714285714285714,
+        0.0
+      ]
+    }
+  ],
+  "mean_fold_spearman": 0.48619555877975457,
+  "pooled_out_of_fold_spearman": 0.5059853395611459,
+  "pooled_interpretation": "Fold-specific weightings can have different score scales; pooled correlation is a separate descriptive quantity, not the mean-fold estimate.",
+  "source_sha256": {
+    "data/dbe_kt22/csv/Questions.csv": "de82e5f851f6488622572208df300b41d2a878bcaf5d9e515b27de72bd577c3b",
+    "data/dbe_kt22/csv/Transaction.csv": "c5f554ed776bce9ce9a556b21afcab894e963bf8ea5adae94668a98282c13af6",
+    "results/code/dbe_signals.py": "eea7e0401baa8d26eb02bf3104488a75429c5a5c908be76fbb1b1189bade600c"
+  },
+  "_public_release": {
+    "removed_fields": [
+      "item_ids",
+      "labels",
+      "out_of_fold_predictions",
+      "folds[].test_indices",
+      "folds[].test_item_ids"
+    ],
+    "reason": "Item-level fields are not distributed: DBE-KT22 question identifiers, teacher labels and per-item scores fall under the ADA conditions of use, and Junyi per-item vectors are omitted for the same uniform rule. Running the listed script on the raw datasets regenerates the full file.",
+    "regenerate_with": "scripts/research/recheck_o4_cv.py",
+    "full_file_sha256_at_commit": "bf60b6cd926ab2b7783b24a7edee0419e4454de1c5a06a39f992196f41b92c41",
+    "commit": "f08f67398eaa5767aa0231bf03d9bcca23c32beb"
+  }
+}

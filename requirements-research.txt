@@ -1,0 +1,9 @@
+# Versions verified in the local manuscript review environment, Python 3.11.16
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.11.2
+
+# Document builds (tools/docx_build/, scripts/submission/) and PDF checks; verified with Python 3.12.14
+python-docx==1.2.0
+pypdf==6.21.2
+# Needs Python >= 3.11 (e.g. uv venv --python 3.12 .venv_new; .venv/ on this disk is a Windows environment). PDF conversion also needs LibreOffice (expected at ~/Applications/LibreOffice.app); the package script itself uses only the standard library.

@@ -79,6 +79,6 @@
     "reason": "Item-level fields are not distributed: DBE-KT22 question identifiers, teacher labels and per-item scores fall under the ADA conditions of use, and Junyi per-item vectors are omitted for the same uniform rule. Running the listed script on the raw datasets regenerates the full file.",
     "regenerate_with": "results/m1/run_a1a2_fit.py",
     "full_file_sha256_at_commit": "b53caf358b1a0156a4edc1c47cee396402c7920d94899db31689893f18503537",
-    "commit": "f08f67398eaa5767aa0231bf03d9bcca23c32beb"
+    "commit": "7a61172e34842fd5b20d17ee57d4f34822915075"
   }
 }

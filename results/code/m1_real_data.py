@@ -136,7 +136,7 @@ for pid, (n, nc, ms, att) in per_prob.items():
     if n < 50 or not ms or not att:
         continue
     ph = (nc + 0.5) / (n + 1.0)          # Laplace 平滑
-    b = math.log(ph / (1 - ph))          # IRT-1PL 难度（越大越难）
+    b = math.log((1 - ph) / ph)          # IRT-1PL 难度（越大越难）；2026-11-01 前误写为 log(ph/(1-ph))，即容易度
     probs.append(pid); S_p.append(b); S_t.append(float(np.median(ms))); S_a.append(float(np.mean(att)))
 S_p, S_t, S_a = map(np.asarray, (S_p, S_t, S_a))
 print("problems used:", len(probs))
@@ -161,7 +161,8 @@ def eff_weights(Z, w):
     return np.array([w[k] * np.cov(Z[:, k], S)[0, 1] / vS for k in range(Z.shape[1])])
 
 w3 = np.array([0.4, 0.3, 0.3])
-Z0 = np.column_stack([minmax(S_p), minmax(S_t), minmax(S_a)])
+S_p_old = -S_p   # 本作废块沿用旧符号口径（容易度），保持 deprecated/ 中的留档数字不变
+Z0 = np.column_stack([minmax(S_p_old), minmax(S_t), minmax(S_a)])
 pi0 = eff_weights(Z0, w3)
 
 def t_logit_minmax(x):
@@ -174,10 +175,10 @@ def t_log(x):
     return np.log(x - x.min() + 1e-6)
 
 drift = {}
-for name, src in [("irt", S_p), ("time", S_t), ("attempts", S_a)]:
+for name, src in [("irt", S_p_old), ("time", S_t), ("attempts", S_a)]:
     for tname, tf in [("logit_minmax", t_logit_minmax), ("probit_std", t_probit), ("log", t_log)]:
         try:
-            cols = [minmax(S_p), minmax(S_t), minmax(S_a)]
+            cols = [minmax(S_p_old), minmax(S_t), minmax(S_a)]
             k = {"irt": 0, "time": 1, "attempts": 2}[name]
             cols[k] = minmax(tf(src))
             Z = np.column_stack(cols)

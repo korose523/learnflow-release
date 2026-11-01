@@ -2,7 +2,7 @@
 
 Code and aggregate results for the manuscript *Difficulty-Scale Fusion: Representation Sensitivity and
 Criterion-Bounded Evaluation* (Zexiao Weng and MinPo Jung, Youngsan University). Exported from commit
-`f08f67398eaa5767aa0231bf03d9bcca23c32beb` of the authors' working repository.
+`7a61172e34842fd5b20d17ee57d4f34822915075` of the authors' working repository.
 
 ## Contents
 

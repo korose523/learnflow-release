@@ -223,11 +223,11 @@
     "n_problems": 994,
     "min_attempts": 50,
     "spearman_irt_vs_time": [
-      -0.25,
+      0.25,
       0.0
     ],
     "spearman_irt_vs_attempts": [
-      -0.1338,
+      0.1338,
       2.3e-05
     ],
     "spearman_time_vs_attempts": [
